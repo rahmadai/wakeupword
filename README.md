@@ -55,7 +55,7 @@ If you already have CMake 3.17+, skip this step.
  tar xzf toolchain.tar.gz -C ${HOME}/toolchains
  
  ```
- 3. Build for x64 Linux
+ 3. Build for armv7
   ```sh
   mkdir build
   cd build
