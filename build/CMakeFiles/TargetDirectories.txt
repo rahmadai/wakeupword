@@ -1,0 +1,3 @@
+/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/build/CMakeFiles/rebuild_cache.dir
+/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/build/CMakeFiles/demo.dir
+/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/build/CMakeFiles/edit_cache.dir
