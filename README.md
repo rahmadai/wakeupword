@@ -45,8 +45,8 @@ If you already have CMake 3.17+, skip this step.
   ### Build 
  1. Clone repo
   ```sh
-  git clone https://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@github.com/ilhamfzri/WidyaWakeWordCPPModel.git
-  cd WidyaWakeWordCPPModel
+  git clone https://github.com/rahmadai/wakeupword.git
+  cd wakeupword
   ```
 
  2. Download cross compile
