@@ -72,3 +72,9 @@ If you already have CMake 3.17+, skip this step.
   ../
   make
   ```
+ 4. How to run in arm
+ ```sh
+ cd run_demo_arm
+ sudo cp ../build/demo ../run_demo_arm
+ push folder 'run_demo_arm' into device
+ LD_LIBRARY_PATH=./lib ./demo
