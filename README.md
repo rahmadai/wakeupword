@@ -48,29 +48,27 @@ If you already have CMake 3.17+, skip this step.
   git clone https://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@github.com/ilhamfzri/WidyaWakeWordCPPModel.git
   cd WidyaWakeWordCPPModel
   ```
- 2. Edit CMakeList.txt
-   ```sh
-  target_link_libraries("demo" ${REQUIRED_LIBS} 
-                    /home/hamz/WidyaWakeWordCPPModel/portaudio/install/lib/libportaudio.a //set this to your portaudio directory
-                    -lpthread
-                    -lasound
-                    -lblas 
-                    )
-  ```
- 4. Build for x64 Linux
+
+ 2. Download cross compile
+ ```sh
+ curl -LO https://publishing-ie-linaro-org.s3.amazonaws.com/releases/components/toolchain/binaries/6.4-2017.11/arm-linux-gnueabihf/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz?Signature=VfyvQEjKz4mWRhKcIS4Soq3KbfA%3D&Expires=1636427417&AWSAccessKeyId=AKIAIELXV2RYNAHFUP7A -o toolchain.tar.gz
+ tar xzf toolchain.tar.gz -C ${HOME}/toolchains
+ 
+ ```
+ 3. Build for x64 Linux
   ```sh
-  sudo cp prebuilt/x86/libtensorflowlite.so lib/
   mkdir build
   cd build
-  cmake ..
-  make
-  ```
-  
-  5. Build for armv7 Linux
-  ```sh
-  sudo cp prebuilt/armv7/libtensorflowlite.so lib/
-  mkdir build
-  cd build
-  cmake ..
+  ARMCC_FLAGS="-march=armv7-a -mfpu=vfp -funsafe-math-optimizations"
+  ARMCC_PREFIX=${HOME}/toolchains/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+  cmake -DCMAKE_C_COMPILER=${ARMCC_PREFIX}gcc \
+  -DCMAKE_CXX_COMPILER=${ARMCC_PREFIX}g++ \
+  -DCMAKE_C_FLAGS="${ARMCC_FLAGS}" \
+  -DCMAKE_CXX_FLAGS="${ARMCC_FLAGS}" \
+  -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+  -DCMAKE_SYSTEM_NAME=Linux \
+  -DCMAKE_SYSTEM_PROCESSOR=armv7 \
+  -DCMAKE_BUILD_TYPE=Debug \
+  ../
   make
   ```
