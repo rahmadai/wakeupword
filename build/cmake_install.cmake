@@ -1,4 +1,4 @@
-# Install script for directory: /home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass
+# Install script for directory: /home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/wakeupword
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/wakeupword/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

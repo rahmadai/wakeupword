@@ -21,6 +21,8 @@
 using namespace std::chrono_literals;
 using namespace std;
 
+int labels = 0;
+
 TfLiteTensor* m_input_tensor = nullptr;
 
 int PortAudioCallback(const void* input,
@@ -286,8 +288,36 @@ void run_model(){
 
 		//inference predict result, num of label = 5
 		for(int i=0; i<5; i++){
-			cout<<output_data[i]<<" | ";
+			cout<<output_data[i]<<" | "; 
+      // cout<<" looping";
+      if (output_data[2] > 5)
+      {
+        labels = 2;
+      }
+      else if (output_data[3] > 5)
+      {
+        labels = 3;
+      }
+      else if (output_data[4] > 5)
+      {
+        labels = 4;
+      }   
 		}
+    if (labels == 2)
+    {
+      cout<<"Halo widya Detected!" << endl;  
+      labels = 0;
+    }
+    else if (labels == 3)
+    {
+      cout<<"Hai widya Detected!" << endl;  
+      labels = 0;
+    }
+    else if (labels == 4)
+    {
+      cout<<"Stop widya Detected!" << endl;  
+      labels = 0;
+    }
 		cout<<endl;
     
     //update next input state from current output state for next inference

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/demo.cpp" "CMakeFiles/demo.dir/demo.cpp.o" "gcc" "CMakeFiles/demo.dir/demo.cpp.o.d"
+  "/home/server/rahmad/Work/WIN/Rahmad_Wakeword/matador_glass/wakeupword/demo.cpp" "CMakeFiles/demo.dir/demo.cpp.o" "gcc" "CMakeFiles/demo.dir/demo.cpp.o.d"
   )
 
 # Targets to which this target links.
